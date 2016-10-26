@@ -1,9 +1,9 @@
 ---
 applications:
 - name: super-mini
-  buildpack: https://github.com/gratiartis/java-buildpack
-  memory: 512M
+  buildpack: https://github.com/cloudfoundry/java-buildpack
+  memory: 256M
   instances: 1
-  host: super-mini
+  host: ketonemaniac-super-mini
   domain: cfapps.io
   path: target/super-mini-1.0.0-SNAPSHOT.jar
