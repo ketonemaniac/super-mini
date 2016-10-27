@@ -7,3 +7,7 @@ applications:
   host: ketonemaniac-super-mini
   domain: cfapps.io
   path: target/super-mini-1.0.0-SNAPSHOT.jar
+
+env:
+  hello: world
+  testing: 123456
