@@ -5,6 +5,10 @@ import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map;
 
+import com.sctrcd.supermini.domain.Version;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,10 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 
 @RestController
 public class HelloRestController {
-    
-    public HelloRestController() {
-    }
-    
+
+    @Autowired
+    private JpaRepository<Version, String> repository;
+
     @RequestMapping(value = "/hello")
     public String countries() {
         return "Hello, World!";
@@ -37,4 +41,12 @@ public class HelloRestController {
         }
         out.println("hello, " + System.getenv().get("hello"));
     }
+
+    @RequestMapping("/version")
+    public String version() {
+        Version ver = repository.findOne("1.0");
+        return ver.getVersionNo() + " " + ver.getCreationDate();
+
+    }
+
 }
