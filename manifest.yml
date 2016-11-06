@@ -2,7 +2,7 @@
 applications:
 - name: super-mini
   buildpack: https://github.com/cloudfoundry/java-buildpack
-  memory: 256M
+  memory: 512M
   instances: 1
   host: ketonemaniac-super-mini
   domain: cfapps.io
@@ -11,3 +11,4 @@ applications:
 env:
   hello: world
   testing: 123456
+  SPRING_PROFILES_ACTIVE: cloud
