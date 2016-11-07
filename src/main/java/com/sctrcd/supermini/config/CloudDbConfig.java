@@ -9,6 +9,9 @@ import org.springframework.context.annotation.Profile;
 
 import javax.sql.DataSource;
 
+/**
+ * Loads this datasource when using Cloud Foundry
+ */
 @Configuration
 @Profile("cloud")
 public class CloudDbConfig extends AbstractCloudConfig {
